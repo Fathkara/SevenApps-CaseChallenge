@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A14940972D4AB97400A4B757 /* NetworkConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14940962D4AB97400A4B757 /* NetworkConstants.swift */; };
+		A14940992D4ABB0300A4B757 /* NetworkCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14940982D4ABB0200A4B757 /* NetworkCaller.swift */; };
+		A149409B2D4ABB2300A4B757 /* UserListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149409A2D4ABB2300A4B757 /* UserListModel.swift */; };
+		A149409D2D4ABC8B00A4B757 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149409C2D4ABC8B00A4B757 /* UserListViewModel.swift */; };
+		A149409F2D4AC01700A4B757 /* UserListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A149409E2D4AC01700A4B757 /* UserListBuilder.swift */; };
+		A14940A32D4AC55D00A4B757 /* UserListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14940A22D4AC55D00A4B757 /* UserListTableViewCell.swift */; };
+		A14940A52D4ACA7C00A4B757 /* UserListDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14940A42D4ACA7C00A4B757 /* UserListDetailVC.swift */; };
+		A14940A82D4ACC8700A4B757 /* UserListDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14940A72D4ACC8700A4B757 /* UserListDetailViewModel.swift */; };
+		A14940AA2D4ACC9700A4B757 /* UserListDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14940A92D4ACC9700A4B757 /* UserListDetailBuilder.swift */; };
 		A1CEA7D62D4AAD1400A76CC9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CEA7D52D4AAD1400A76CC9 /* AppDelegate.swift */; };
 		A1CEA7DA2D4AAD1400A76CC9 /* UserListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CEA7D92D4AAD1400A76CC9 /* UserListVC.swift */; };
 		A1CEA7DF2D4AAD1700A76CC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A1CEA7DE2D4AAD1700A76CC9 /* Assets.xcassets */; };
@@ -37,6 +46,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A14940962D4AB97400A4B757 /* NetworkConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstants.swift; sourceTree = "<group>"; };
+		A14940982D4ABB0200A4B757 /* NetworkCaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkCaller.swift; sourceTree = "<group>"; };
+		A149409A2D4ABB2300A4B757 /* UserListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListModel.swift; sourceTree = "<group>"; };
+		A149409C2D4ABC8B00A4B757 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
+		A149409E2D4AC01700A4B757 /* UserListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListBuilder.swift; sourceTree = "<group>"; };
+		A14940A22D4AC55D00A4B757 /* UserListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListTableViewCell.swift; sourceTree = "<group>"; };
+		A14940A42D4ACA7C00A4B757 /* UserListDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailVC.swift; sourceTree = "<group>"; };
+		A14940A72D4ACC8700A4B757 /* UserListDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailViewModel.swift; sourceTree = "<group>"; };
+		A14940A92D4ACC9700A4B757 /* UserListDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListDetailBuilder.swift; sourceTree = "<group>"; };
 		A1CEA7D22D4AAD1400A76CC9 /* SevenAppsCaseChallenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SevenAppsCaseChallenge.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A1CEA7D52D4AAD1400A76CC9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A1CEA7D92D4AAD1400A76CC9 /* UserListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListVC.swift; sourceTree = "<group>"; };
@@ -78,6 +96,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A14940A02D4AC53000A4B757 /* UserList */ = {
+			isa = PBXGroup;
+			children = (
+				A1CEA7D92D4AAD1400A76CC9 /* UserListVC.swift */,
+				A149409E2D4AC01700A4B757 /* UserListBuilder.swift */,
+				A149409C2D4ABC8B00A4B757 /* UserListViewModel.swift */,
+				A14940A12D4AC53D00A4B757 /* Cell */,
+			);
+			path = UserList;
+			sourceTree = "<group>";
+		};
+		A14940A12D4AC53D00A4B757 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				A14940A22D4AC55D00A4B757 /* UserListTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		A14940A62D4ACA8000A4B757 /* UserListDetail */ = {
+			isa = PBXGroup;
+			children = (
+				A14940A42D4ACA7C00A4B757 /* UserListDetailVC.swift */,
+				A14940A72D4ACC8700A4B757 /* UserListDetailViewModel.swift */,
+				A14940A92D4ACC9700A4B757 /* UserListDetailBuilder.swift */,
+			);
+			path = UserListDetail;
+			sourceTree = "<group>";
+		};
 		A1CEA7C92D4AAD1400A76CC9 = {
 			isa = PBXGroup;
 			children = (
@@ -100,13 +147,12 @@
 			isa = PBXGroup;
 			children = (
 				A1CEA80B2D4AAEA500A76CC9 /* Manager */,
+				A1CEA8052D4AAE7200A76CC9 /* Screen */,
 				A1CEA80A2D4AAEA100A76CC9 /* Model */,
 				A1CEA8092D4AAE9300A76CC9 /* Support */,
 				A1CEA8082D4AAE8900A76CC9 /* Utilities */,
 				A1CEA8072D4AAE8000A76CC9 /* Extension */,
 				A1CEA8062D4AAE7800A76CC9 /* Network */,
-				A1CEA8052D4AAE7200A76CC9 /* Screen */,
-				A1CEA7D92D4AAD1400A76CC9 /* UserListVC.swift */,
 			);
 			path = SevenAppsCaseChallenge;
 			sourceTree = "<group>";
@@ -114,6 +160,8 @@
 		A1CEA8052D4AAE7200A76CC9 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				A14940A62D4ACA8000A4B757 /* UserListDetail */,
+				A14940A02D4AC53000A4B757 /* UserList */,
 			);
 			path = Screen;
 			sourceTree = "<group>";
@@ -121,6 +169,8 @@
 		A1CEA8062D4AAE7800A76CC9 /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A14940962D4AB97400A4B757 /* NetworkConstants.swift */,
+				A14940982D4ABB0200A4B757 /* NetworkCaller.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -154,6 +204,7 @@
 		A1CEA80A2D4AAEA100A76CC9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A149409A2D4ABB2300A4B757 /* UserListModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -317,7 +368,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14940A52D4ACA7C00A4B757 /* UserListDetailVC.swift in Sources */,
+				A149409B2D4ABB2300A4B757 /* UserListModel.swift in Sources */,
+				A14940A32D4AC55D00A4B757 /* UserListTableViewCell.swift in Sources */,
+				A14940972D4AB97400A4B757 /* NetworkConstants.swift in Sources */,
+				A149409F2D4AC01700A4B757 /* UserListBuilder.swift in Sources */,
+				A149409D2D4ABC8B00A4B757 /* UserListViewModel.swift in Sources */,
+				A14940A82D4ACC8700A4B757 /* UserListDetailViewModel.swift in Sources */,
+				A14940AA2D4ACC9700A4B757 /* UserListDetailBuilder.swift in Sources */,
 				A1CEA7DA2D4AAD1400A76CC9 /* UserListVC.swift in Sources */,
+				A14940992D4ABB0300A4B757 /* NetworkCaller.swift in Sources */,
 				A1CEA7D62D4AAD1400A76CC9 /* AppDelegate.swift in Sources */,
 				A1CEA8112D4AB3E800A76CC9 /* Font.swift in Sources */,
 			);
