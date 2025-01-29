@@ -29,17 +29,15 @@ final class UserListViewModel: UserListViewModelProtocol {
         self.service = service
     }
     
+    @MainActor
     func load() async {
         Task {
             do {
                 let users: [UserListModel] = try await service.fetchData(EndPoint.userList)
-                DispatchQueue.main.async {
                     self.delegate?.handlerOutput(output: .userList(users))
-                }
+                
             } catch {
-                DispatchQueue.main.async {
-                    self.delegate?.handlerOutput(output: .error(URLError.badServerResponse))
-                }
+                self.delegate?.handlerOutput(output: .error(URLError.badServerResponse))
             }
         }
     }

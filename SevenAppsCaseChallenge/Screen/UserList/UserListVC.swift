@@ -63,7 +63,7 @@ class UserListVC: UIViewController {
     
     
     @objc func rightButtonTapped(){
-//        self.show(MovieFavoriteBuilder.make(), sender: nil)
+        self.show(UserListFavoriteBuilder.make(), sender: nil)
     }
 
 

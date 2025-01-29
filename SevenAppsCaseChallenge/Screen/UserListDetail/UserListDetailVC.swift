@@ -6,6 +6,10 @@
 //
 
 import UIKit
+import Lottie
+import CoreData
+
+let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
 class UserListDetailVC: UIViewController {
     //MARK: - UI
@@ -14,8 +18,26 @@ class UserListDetailVC: UIViewController {
     let userPhoneLabel = UILabel()
     let userWebSiteLabel = UILabel()
     
+    let addToFav: UIButton = {
+        let button = UIButton()
+        button.setTitle("Add To Favorites", for: .normal)
+        button.titleLabel!.font = Font.custom(size: 15,fontWeight: .SemiBold)
+        button.backgroundColor = .black
+        button.layer.cornerRadius = 20
+        return button
+    }()
+    
+    let animationView: LottieAnimationView = {
+        let animationView = LottieAnimationView(name: "success")
+        animationView.contentMode = .scaleAspectFill
+        animationView.loopMode = .loop
+        return animationView
+    }()
+
+    
     //MARK: - Properties
     var viewModel: UserListDetailViewModel?
+    var userFav: UserListModel? = nil
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -39,6 +61,8 @@ class UserListDetailVC: UIViewController {
         view.addSubview(userEmailLabel)
         view.addSubview(userPhoneLabel)
         view.addSubview(userWebSiteLabel)
+        view.addSubview(addToFav)
+        view.addSubview(animationView)
         userNameLabel.font = Font.custom(size: 18,fontWeight: .Bold)
         userEmailLabel.font = Font.custom(size: 18,fontWeight: .Bold)
         userPhoneLabel.font = Font.custom(size: 18,fontWeight: .Bold)
@@ -47,7 +71,7 @@ class UserListDetailVC: UIViewController {
         let leftButton = UIBarButtonItem(image: UIImage(named: "back"), style: .done, target: self, action: #selector(leftButtonTapped))
         navigationItem.leftBarButtonItem = leftButton
         leftButton.tintColor = .black
- 
+        addToFav.addTarget(self, action: #selector(didTapFavButton), for: .touchUpInside)
     }
     
     private func initDelegate() {
@@ -64,6 +88,16 @@ class UserListDetailVC: UIViewController {
         }
     }
     
+    @objc func didTapFavButton(){
+        if let userDetail = userFav {
+            viewModel?.addCoreData(data: userDetail)
+        }
+        animationView.play()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) { [self] in
+            animationView.stop()
+        }
+    }
+    
     @objc func leftButtonTapped(){
         navigationController?.popViewController(animated: true)
     }
@@ -75,6 +109,8 @@ extension UserListDetailVC: UserListDetailViewModelDelegate {
         switch output {
         case.userList(let userList):
             self.saveUI(userData: userList)
+            userFav = userList.first
+            
         case .error(let error):
             print(error)
         }
@@ -103,6 +139,16 @@ extension UserListDetailVC {
         userWebSiteLabel.snp.makeConstraints { make in
             make.top.equalTo(userEmailLabel).offset(64)
             make.left.equalToSuperview().offset(16)
+        }
+        
+        addToFav.snp.makeConstraints { make in
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).offset(-16)
+            make.width.equalTo(UIScreen.main.bounds.width * 0.5)
+            make.centerX.equalTo(view)
+        }
+        animationView.snp.makeConstraints { make in
+            make.centerX.centerY.equalTo(view)
+            make.height.width.equalTo(UIScreen.main.bounds.width * 0.3)
         }
 
     }
