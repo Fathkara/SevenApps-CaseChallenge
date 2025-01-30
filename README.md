@@ -1,4 +1,4 @@
-# SevenAppsChalleng
+# SevenAppsChallenge
 
 ## Technology and Structures
 
