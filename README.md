@@ -1,16 +1,13 @@
-# EnerjisaApp
+# SevenAppsChalleng
 
 ## Technology and Structures
 
 - **MVVM Design Pattern**
 - **UIKit**
 - **Programmatic UI**
-- **Alamofire**
+- **CoreData**
 - **SnapKit**
-- **PhoneNumberKit**
-- **Extensions**
-- **UIStackView**
-- **UITextField**
+- **Lottie**
 - **Protocol**
 - **Delegate**
 
